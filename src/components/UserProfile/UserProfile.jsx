@@ -9,16 +9,19 @@ import TagDistribution from './TagDistribution';
 import RatingDistribution from './RatingDistribution';
 import SubmissionStats from './SubmissionStats';
 import SolvedProblems from './SolvedProblems';
+import { useParams } from "react-router-dom";
 
-const UserProfile = ({ username }) => {
+  
+
+const UserProfile = () => {
+  const { username } = useParams();
   const { data, loading, error } = useUserProfile(username);
-
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage message={error} />;
   if (!data) return null;
 
   return (
-    <div className="space-y-6">
+    <div className="flex flex-col gap-10 ">
       <UserHeader user={data} />
       <UserStats data={data} />
       <SubmissionStats stats={data.submissionStats} />

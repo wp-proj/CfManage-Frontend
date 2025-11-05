@@ -12,16 +12,16 @@ const UserHeader = ({ user }) => {
       'Expert': 'text-blue-500',
       'Specialist': 'text-cyan-500',
       'Pupil': 'text-green-500',
-      'Newbie': 'text-gray-500',
+      'Newbie': 'text-white-500',
     };
-    return colors[rank] || 'text-gray-500';
+    return colors[rank] || 'text-white-500';
   };
 
   return (
-    <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
+    <div className="bg-gray/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
       <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
         {/* Avatar */}
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           {user.avatar ? (
             <img
               src={user.avatar}
@@ -37,17 +37,17 @@ const UserHeader = ({ user }) => {
 
         {/* User Info */}
         <div className="flex-1 text-center md:text-left">
-          <h2 className="text-4xl font-bold text-gray-800 mb-2">{user.username}</h2>
+          <h2 className="text-4xl font-bold text-white-800 mb-2">{user.username}</h2>
           
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-4">
             <span className={`text-2xl font-bold ${getRankColor(user.rank)}`}>
               {user.rank}
             </span>
-            <span className="text-gray-600">•</span>
+            <span className="text-white-600">•</span>
             <span className="text-2xl font-bold text-purple-600">{user.rating}</span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-gray-600">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-white-600">
             {user.country && (
               <div className="flex items-center space-x-1">
                 <MapPin size={16} />
@@ -66,11 +66,11 @@ const UserHeader = ({ user }) => {
             </div>
           </div>
 
-          <div className="mt-4 flex items-center justify-center md:justify-start space-x-2 text-sm text-gray-500">
+          <div className="mt-4 flex items-center justify-center md:justify-start space-x-2 text-sm text-white-500">
             <TrendingUp size={16} />
-            <span>Contribution: {user.contribution}</span>
-            <span>•</span>
-            <span>Friends: {user.friendOfCount}</span>
+            <span> Contribution: {user.contribution} </span>
+            <span> • </span>
+            <span> Friends: {user.friendOfCount} </span>
           </div>
         </div>
       </div>

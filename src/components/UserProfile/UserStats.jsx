@@ -23,21 +23,22 @@ const UserStats = ({ data }) => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {stats.map((stat, index) => (
-        <div
-          key={index}
-          className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-6 hover:scale-105 transition-transform"
-        >
-          <div className={`bg-gradient-to-br ${stat.color} w-16 h-16 rounded-xl flex items-center justify-center mb-4`}>
-            {stat.icon}
-          </div>
-          <div className="text-3xl font-bold text-gray-800 mb-1">{stat.value}</div>
-          <div className="text-gray-600">{stat.label}</div>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {stats.map((stat, index) => (
+      <div
+        key={index}
+        className="bg-gray-700 backdrop-blur-sm rounded-xl shadow-xl p-6 hover:scale-105 transition-transform flex flex-col items-center text-center"
+      >
+        <div className={`${stat.color} w-16 h-16 rounded-xl flex items-center justify-center mb-4`}>
+          {stat.icon}
         </div>
-      ))}
-    </div>
-  );
+        <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+        <div className="text-gray-300">{stat.label}</div>
+      </div>
+    ))}
+  </div>
+);
+
 };
 
 export default UserStats;

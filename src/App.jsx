@@ -1,16 +1,13 @@
-import { useState } from 'react'
-import Layout from './components/Layout/Layout'
-import SearchBar from './components/common/SearchBar'
-import UserProfile from './components/UserProfile/UserProfile'
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import SearchBar from "./components/common/SearchBar";
+import UserProfile from "./components/UserProfile/UserProfile";
+import Navbar from "./components/Layout/Navbar";
 
-function App() {
-  const [username, setUsername] = useState('');
-
-  const handleSearch = (searchUsername) => {
-    setUsername(searchUsername);
-  };
-
+function Home({ onSearch }) {
   return (
+    <>
     <Layout>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
@@ -21,13 +18,53 @@ function App() {
             View detailed statistics and insights of any Codeforces user
           </p>
         </div>
-        
-        <SearchBar onSearch={handleSearch} />
-        
-        {username && <UserProfile username={username} />}
+        <SearchBar onSearch={onSearch} />
       </div>
     </Layout>
-  )
+    </>
+  );
 }
 
-export default App
+function App() {
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (searchUsername) => {
+    setUsername(searchUsername);
+    navigate(`/user/${searchUsername}`);
+  };
+
+  return (
+    <>
+    <Navbar></Navbar>
+    <div className="app">
+      <div className="container">
+      
+    <Routes>
+      <Route path="/" element={<Home onSearch={handleSearch} />} />
+      <Route
+        path="/user/:username"
+        element={
+          <Layout>
+              <UserProfile />
+           
+          </Layout>
+        }
+      />
+    </Routes>
+    </div>
+    </div>
+    </>
+  );
+}
+
+export default function RootApp() {
+  return (
+    <>
+    <Router>
+      
+      <App />
+    </Router>
+    </>
+  );
+}
