@@ -24,6 +24,10 @@ export const codeforcesApi = {
     });
     return response.data;
   },
+  compareUsers: async (user1, user2) => {
+    const response = await api.post('/compare', { user1, user2 });
+    return response.data;
+  },
 };
 
 export default api;

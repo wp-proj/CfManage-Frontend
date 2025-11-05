@@ -9,6 +9,7 @@ import Layout from "./components/Layout/Layout";
 import SearchBar from "./components/common/SearchBar";
 import UserProfile from "./components/UserProfile/UserProfile";
 import Navbar from "./components/Layout/Navbar";
+import ComparePage from "./page/ComparePage";
 
 function Home({ onSearch }) {
   return (
@@ -62,6 +63,7 @@ function App() {
                 </Layout>
               }
             />
+            <Route path="/compare" element={<ComparePage />} />
           </Routes>
         </div>
       </div>
