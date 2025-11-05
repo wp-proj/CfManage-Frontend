@@ -1,33 +1,33 @@
-import { Github, Code2 } from 'lucide-react';
+import { Github, Code2 } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white/10 backdrop-blur-md border-b border-white/20">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Code2 className="text-white" size={32} />
-            <span className="text-white text-xl font-bold">CF Viewer</span>
-          </div>
-          
-          <div className="flex items-center space-x-4">
-            <a
-              href="https://codeforces.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/80 hover:text-white transition"
-            >
-              Codeforces
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/80 hover:text-white transition"
-            >
-              <Github size={24} />
-            </a>
-          </div>
+    <nav className="bg-gray-900/70 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+      <div className="w-full px-8 py-4 flex items-center justify-between">
+        {/* Left side: Logo */}
+        <div className="flex items-center space-x-2">
+          <Code2 className="text-white" size={26} />
+          <span className="text-white text-lg font-semibold">CFManage</span>
+        </div>
+
+        {/* Right side: Links */}
+        <div className="flex items-center space-x-6 m-10">
+          <a
+            href="https://codeforces.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/80 hover:text-white transition-colors"
+          >
+            Codeforces
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/80 hover:text-white transition-colors px-2"
+          >
+            <Github size={22} />
+          </a>
         </div>
       </div>
     </nav>
