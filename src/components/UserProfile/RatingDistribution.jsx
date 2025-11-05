@@ -9,7 +9,7 @@ const RatingDistribution = ({ data }) => {
     }));
 
   return (
-    <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-6">
+    <div className="bg-gray/95 backdrop-blur-sm rounded-xl shadow-xl p-6">
       <h3 className="text-2xl font-bold text-gray-800 mb-4">Problems by Rating</h3>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={chartData}>

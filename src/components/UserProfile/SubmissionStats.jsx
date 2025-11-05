@@ -9,16 +9,16 @@ const SubmissionStats = ({ stats }) => {
   ];
 
   return (
-    <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-6">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6">Submission Statistics</h3>
+    <div className="bg-gray/95 backdrop-blur-sm rounded-xl shadow-xl p-6">
+      <h3 className="text-2xl font-bold text-white-800 mb-6">Submission Statistics</h3>
       
       {/* Progress bars */}
       <div className="space-y-4">
         {verdicts.map((verdict) => (
           <div key={verdict.label}>
             <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-700 font-medium">{verdict.label}</span>
-              <span className="text-gray-600">{verdict.value} ({verdict.percentage.toFixed(1)}%)</span>
+              <span className="text-white-700 font-medium">{verdict.label}</span>
+              <span className="text-white-600">{verdict.value} ({verdict.percentage.toFixed(1)}%)</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
               <div
