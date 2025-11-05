@@ -12,7 +12,7 @@ const Heatmap = ({ heatmapData }) => {
   }));
 
   const getColorScale = (count) => {
-    if (count === 0) return 'color-empty';
+    if (count === 0) return 'fill: #2d2d2d;';
     if (count < 3) return 'color-scale-1';
     if (count < 6) return 'color-scale-2';
     if (count < 10) return 'color-scale-3';
@@ -20,7 +20,7 @@ const Heatmap = ({ heatmapData }) => {
   };
 
   return (
-    <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-6">
+    <div className="bg-gray/95 backdrop-blur-sm rounded-xl shadow-xl p-6">
       <h3 className="text-2xl font-bold text-gray-800 mb-4">Submission Heatmap</h3>
       <div className="overflow-x-auto">
         <CalendarHeatmap
@@ -28,7 +28,7 @@ const Heatmap = ({ heatmapData }) => {
           endDate={today}
           values={formattedData}
           classForValue={(value) => {
-            if (!value) return 'color-empty';
+            if (!value) return 'fill: #2d2d2d;';
             return getColorScale(value.count);
           }}
           tooltipDataAttrs={(value) => {
