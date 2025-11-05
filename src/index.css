@@ -1,0 +1,139 @@
+@import "tailwindcss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Heatmap Styles */
+.react-calendar-heatmap {
+  width: 100%;
+}
+
+.react-calendar-heatmap .color-empty {
+  fill: #e0e0e0;
+}
+
+.react-calendar-heatmap .color-scale-1 {
+  fill: #c6e48b;
+}
+
+.react-calendar-heatmap .color-scale-2 {
+  fill: #7bc96f;
+}
+
+.react-calendar-heatmap .color-scale-3 {
+  fill: #239a3b;
+}
+
+.react-calendar-heatmap .color-scale-4 {
+  fill: #196127;
+}
+
+:root{
+  --bg-1: #071022;
+  --bg-2: #0f1724;
+  --card: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.03);
+  --text: #e6eef8;
+  --muted: #9aa4b2;
+  --accent: #7c3aed;
+  --accent-2: #06b6d4;
+  --shadow: 0 8px 30px rgba(2,6,23,0.7);
+}
+
+html,body,#root{
+  height:100%;
+  margin:0;
+  background: linear-gradient(180deg,var(--bg-2),var(--bg-1));
+  color:var(--text);
+  font-family: Inter, Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* center page */
+.app{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  box-sizing:border-box;
+}
+
+/* main content card */
+.container{
+  width:100%;
+  max-width:1100px; /* adjust to taste */
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:14px;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+/* internal spacing / sections */
+.header, .profile, .stats-section{
+  padding:20px 24px;
+}
+
+/* make text and small UI elements fit dark theme */
+h1,h2,h3{ color:var(--text); margin:0; }
+.subtle{ color:var(--muted); }
+
+.avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid rgba(255,255,255,0.04);
+  box-shadow:0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* cards for small stat boxes */
+.stat-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  border-radius:10px;
+  padding:16px;
+  min-width:140px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  color:var(--text);
+}
+
+/* progress / bars */
+.progress-track{
+  background: rgba(255,255,255,0.03);
+  border-radius:10px;
+  height:12px;
+}
+.progress-fill{ background: linear-gradient(90deg,var(--accent),var(--accent-2)); height:100%; border-radius:10px; }
+
+/* responsive */
+@media (max-width:900px){
+  .profile{ flex-direction:column; align-items:center; text-align:center; }
+  .avatar{ margin-bottom:12px; }
+}
