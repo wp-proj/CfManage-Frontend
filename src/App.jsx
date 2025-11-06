@@ -18,21 +18,25 @@ function Home({ onSearch }) {
     <>
       <Layout>
         <div className="container mx-auto px-4 py-8">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-white mb-4">
-              Codeforces Profile Viewer
-            </h1>
-            <p className="text-white/80 text-lg">
-              View detailed statistics and insights of any Codeforces user
-            </p>
-          </div>
+          <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-white">
+            {/* Hero Section */}
+            <section className="container mx-auto px-6 pt-16 pb-12 text-center">
+              <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Codeforces Profile Viewer
+              </h1>
+              <p className="text-gray-400 text-lg mx-auto leading-relaxed">
+                Analyze ratings, problem-solving stats, and tag distributions between any user.
+              </p>
+              <div className='h-5'></div>
+            </section>
 
-          {/* Center + Wider */}
-          <div className="flex justify-center">
-            <div className="w-full max-w-2xl">
-              {" "}
-              {/* you can change 2xl → 3xl for even wider */}
-              <SearchBar onSearch={onSearch} />
+            {/* Center + Wider */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-2xl">
+                {" "}
+                {/* you can change 2xl → 3xl for even wider */}
+                <SearchBar onSearch={onSearch} />
+              </div>
             </div>
           </div>
         </div>

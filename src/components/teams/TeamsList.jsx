@@ -96,10 +96,7 @@ const TeamsList = ({ teams, selectedTeamId, onViewLeaderboard, onDeleteTeam, loa
 
   return (
     <div className="space-y-4">
-      <h2 className="text-2xl font-bold text-[--color-text] mb-4 flex items-center gap-2">
-        <Users size={24} />
-        My Teams
-      </h2>
+      
       
       {teamsData.map((team) => (
         <div
