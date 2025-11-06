@@ -10,6 +10,8 @@ import SearchBar from "./components/common/SearchBar";
 import UserProfile from "./components/UserProfile/UserProfile";
 import Navbar from "./components/Layout/Navbar";
 import ComparePage from "./page/ComparePage";
+import Teams from './page/Teams';
+import TeamLeaderboardPage from "./page/TeamLeaderboardPage";
 
 function Home({ onSearch }) {
   return (
@@ -52,6 +54,7 @@ function App() {
     <>
       <Navbar></Navbar>
       <div className="app">
+        {localStorage.getItem('myTeamIds')}
         <div className="container">
           <Routes>
             <Route path="/" element={<Home onSearch={handleSearch} />} />
@@ -64,6 +67,8 @@ function App() {
               }
             />
             <Route path="/compare" element={<ComparePage />} />
+            <Route path="/teams" element={<Teams />} />
+            <Route path="/teams/:teamid" element={<TeamLeaderboardPage />} />
           </Routes>
         </div>
       </div>
