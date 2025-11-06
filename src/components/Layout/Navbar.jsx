@@ -39,6 +39,10 @@ const Navbar = () => {
               <Users2 size={18} />
               Compare
             </Link>
+            <Link to="/teams" className="nav-link">
+              Teams
+            </Link>
+
           </div>
         </div>
 
