@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Trophy, Users, Calendar, ExternalLink } from 'lucide-react';
-import Leaderboard from '../components/teams/Leaderboard';
+import Leaderboard from '../components/teams/LeaderBoard';
 import { getTeamLeaderboard } from '../services/teamService';
 
 const TeamLeaderboardPage = () => {
