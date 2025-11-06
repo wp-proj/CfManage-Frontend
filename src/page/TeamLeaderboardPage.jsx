@@ -23,16 +23,14 @@ const TeamLeaderboardPage = () => {
 
     try {
       // Get team info from localStorage
-      const savedTeams = JSON.parse(localStorage.getItem('myTeams') || '[]');
-      const team = savedTeams.find(t => t._id === teamid);
+      // const team = savedTeams.find(t => t._id === teamid);
 
-      if (!team) {
-        setError('Team not found in your saved teams');
-        setLoading(false);
-        return;
-      }
+      // if (!team) {
+      //   setError('Team not found in your saved teams');
+      //   setLoading(false);
+      //   return;
+      // }
 
-      setTeamData(team);
 
       // Fetch leaderboard from API
       const data = await getTeamLeaderboard(teamid);

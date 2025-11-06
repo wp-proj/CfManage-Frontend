@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TeamsList from '../components/teams/TeamsList';
 import CreateTeamForm from '../components/teams/CreateTeamForm';
-import Leaderboard from '../components/teams/Leaderboard';
+import Leaderboard from '../components/teams/LeaderBoard';
 import { createTeam, getTeamLeaderboard } from '../services/teamService';
 import { Trophy, Trash2, Users, ExternalLink, Loader2 } from 'lucide-react';
 
