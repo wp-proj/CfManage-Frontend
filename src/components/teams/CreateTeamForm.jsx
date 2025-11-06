@@ -42,7 +42,6 @@ const CreateTeamForm = ({ onSubmit, loading, onCancel }) => {
         if (!existingIds.includes(result.teamId)) {
           existingIds.push(result.teamId);
           localStorage.setItem('myTeamIds', JSON.stringify(existingIds));
-          console.log(existingIds)
         }
       }
 

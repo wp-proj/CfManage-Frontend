@@ -54,7 +54,6 @@ function App() {
     <>
       <Navbar></Navbar>
       <div className="app">
-        {localStorage.getItem('myTeamIds')}
         <div className="container">
           <Routes>
             <Route path="/" element={<Home onSearch={handleSearch} />} />

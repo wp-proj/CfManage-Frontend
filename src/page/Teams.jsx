@@ -23,7 +23,6 @@ const Teams = () => {
     if (teamIds.length>0){
     localStorage.setItem('myTeamIds', JSON.stringify(teamIds));
     }
-    console.log(teamIds)
   }, [teamIds]);
 
   const handleCreateTeam = async (teamData) => {
